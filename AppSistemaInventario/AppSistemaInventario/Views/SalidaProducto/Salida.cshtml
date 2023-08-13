@@ -1,0 +1,33 @@
+﻿@model List<SalidaProducto>
+
+@{
+    ViewData["Title"] = "Salidas de Productos";
+}
+
+<div class="container">
+    <h2>Salida de Productos</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Descripción</th>
+                <th>Stock Salida</th>
+                <th>Usuario</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var salida in Model)
+            {
+                <tr>
+                    <td>@salida.Id</td>
+                    <td>@salida.IdproductoNavigation?.Nombre</td>
+                    <td>@salida.Descripcion</td>
+                    <td>@salida.StockS</td>
+                    <td>@salida.IdUsuarioNavigation?.Username</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

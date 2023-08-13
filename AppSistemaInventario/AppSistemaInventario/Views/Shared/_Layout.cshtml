@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AppSistemaInventario</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AppSistemaInventario.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="sidebar">
+        <ul class="list-unstyled">
+            <li>
+                <a href="@Url.Action("Index", "Home")">Inicio</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Entrada", "EntradaProducto")">Entrada</a>
+            </li>
+            <li>
+                <a href="@Url.Action("AgregarEntrada", "EntradaProducto")">Agregar Entrada</a>
+            </li>
+            <li>
+                <a href="@Url.Action("ListarProducto", "Producto")">Productos</a>
+            </li>
+            <li>
+                <a href="@Url.Action("AgregarProducto", "Producto")">Agregar Productos</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Categoria", "CategoriaProducto")">Categorias</a>
+            </li>
+            <li>
+                <a href="@Url.Action("AgregarCategoria", "CategoriaProducto")">Agregar Categorias</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Salida", "SalidaProducto")">Salida</a>
+            </li>
+            <li>
+                <a href="@Url.Action("AgregarSalida", "SalidaProducto")">Agregar Salida</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Logout", "Home")">Cerrar Sesion</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2023 - AppSistemaInventario - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+

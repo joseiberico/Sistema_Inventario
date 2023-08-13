@@ -1,0 +1,14 @@
+﻿@model AppSistemaInventario.Models.CategoriaProducto
+
+<div class="container">
+    <h2>Eliminar Categoria</h2>
+    <p>Confirmar la eliminación de la siguiente categoría:</p>
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="Tipo" name="Tipo" value="@Model.Tipo" readonly>
+    </div>
+    <form id="form" method="post" action="@Url.Action("ConfirmarEliminarCategoria", new { Id = Model.Id })">
+        <button id="EliminarCategoria" type="submit" class="btn btn-danger">Eliminar Categoria</button>
+        <a class="btn btn-secondary" asp-controller="CategoriaProducto" asp-action="Categoria">Regresar</a>
+    </form>
+</div>

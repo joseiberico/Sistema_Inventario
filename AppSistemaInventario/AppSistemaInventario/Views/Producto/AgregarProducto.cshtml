@@ -1,0 +1,48 @@
+﻿@model AppSistemaInventario.Models.Producto
+@{
+    ViewData["Title"] = "Agregar Producto";
+}
+
+<div class="container">
+    <h2>Agregar Producto</h2>
+    <form id="form" method="post" asp-action="AgregarProducto">
+        <div class="form-group">
+            <label for="Nombre">Producto:</label>
+            <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Ingresa el nombre del producto" value="@Model.Nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="Descripcion">Descripcion:</label>
+            <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingresa la descripcion" value="@Model.Descripcion">
+        </div>
+
+        <div class="form-group">
+            <label for="Precio">Precio:</label>
+            <input type="text" class="form-control" id="Precio" name="Precio" placeholder="Ingresa el precio" value="@Model.Precio">
+        </div>
+
+        <div class="form-group">
+            <label for="Stock">Stock:</label>
+            <input type="text" class="form-control" id="Stock" name="Stock" placeholder="Ingresa el Stock" value="@Model.Stock">
+        </div>
+
+        <div class="form-group">
+            <label for="Marca">Marca:</label>
+            <input type="text" class="form-control" id="Marca" name="Marca" placeholder="Ingresa la marca" value="@Model.Marca">
+        </div>
+
+        <div class="form-group">
+            <label for="Tipo">Categoría:</label>
+            <select class="form-control" id="Idcategoria" name="Idcategoria">
+                <option value="">Selecciona una categoría</option>
+                @foreach (var categoria in ViewBag.Categorias)
+                {
+                    <option value="@categoria.Id">@categoria.Tipo</option>
+                }
+            </select>
+        </div>
+
+        <button id="AgregarProducto" type="submit" class="btn btn-primary">Agregar Producto</button>
+        <a class="btn btn-secondary" asp-area="" asp-controller="Producto" asp-action="ListarProducto">Regresar</a>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+﻿@model List<CategoriaProducto>
+
+@{
+    ViewData["Title"] = "Categorias";
+}
+
+<div class="container">
+    <h2>Categorias</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo de Categoria</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var categoria in Model)
+            {
+                <tr>
+                    <td>@categoria.Id</td>
+                    <td>@categoria.Tipo</td>
+                    <td>
+                        <a class="btn btn-warning" asp-area="" asp-controller="CategoriaProducto" asp-action="ActualizarCategoria" asp-route-id="@categoria.Id"><i class="bi bi-pencil-fill"></i> Actualizar</a>
+                        <a class="btn btn-danger" asp-area="" asp-controller="CategoriaProducto" asp-action="EliminarCategoria" asp-route-id="@categoria.Id"><i class="bi bi-eraser-fill"></i>Borrar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

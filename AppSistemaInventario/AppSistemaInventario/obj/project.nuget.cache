@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "wUDlQH5nsWvmYcMHZP6OtNef4lVl64lNVg733zMGhdOIdSwOVR52X4GPAfcoajXLRr4WynFBCehAKtC7qEDGzQ==",
+  "success": true,
+  "projectFilePath": "C:\\Sistema Inventario\\AppSistemaInventario\\AppSistemaInventario\\AppSistemaInventario.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\JOSE-PC\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

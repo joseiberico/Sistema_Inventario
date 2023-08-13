@@ -1,0 +1,39 @@
+﻿@model List<EntradaProducto>
+
+@{
+    ViewData["Title"] = "Entradas de Productos";
+}
+
+<div class="container">
+    <h2>Entrada de Productos</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Descripción</th>
+                <th>Stock Entrada</th>
+                <th>Usuario</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entrada in Model)
+            {
+                <tr>
+                    <td>@entrada.Id</td>
+                    <td>@entrada.IdproductoNavigation?.Nombre</td>
+                    <td>@entrada.Descripcion</td>
+                    <td>@entrada.StockE</td>
+                    <td>@entrada.IdUsuarioNavigation?.Username</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+

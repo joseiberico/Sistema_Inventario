@@ -1,0 +1,21 @@
+﻿@model List<AppSistemaInventario.Models.CategoriaProducto>
+
+@{
+    ViewData["Title"] = "Agregar Categoria";
+}
+
+<div class="container">
+    <h2>Agregar Categoria</h2>
+    <form id="form" method="post" action="@Url.Action("AgregarCategoria")">
+        <div class="form-group">
+            <label for="tipo">Tipo de Categoria:</label>
+            <input type="text" class="form-control" id="tipo" name="Tipo" placeholder="Ingresa el nombre de la categoria">
+        </div>
+
+        <button id="AgregarCategoria" type="submit" class="btn btn-primary">Agregar Categoria</button>
+        <a class="btn btn-secondary" asp-area="" asp-controller="CategoriaProducto" asp-action="Categoria">Regresar</a>
+    </form>
+</div>
+
+
+

@@ -1,0 +1,45 @@
+﻿@model AppSistemaInventario.Models.SalidaProducto
+
+@{
+    ViewData["Title"] = "Agregar Salida";
+}
+
+<div class="container">
+    <h2>Agregar Salida de Producto</h2>
+    <form id="form" method="post" asp-action="AgregarSalida">
+        <div class="form-group">
+            <label for="Tipo">Producto:</label>
+            <select class="form-control" id="IdProducto" name="IdProducto">
+                <option value="">Selecciona un Producto</option>
+                @foreach (var producto in ViewBag.Productos)
+                {
+                    <option value="@producto.Id">@producto.Nombre</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="tipo">Descripcion:</label>
+            <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingresa la descripcion">
+        </div>
+
+        <div class="form-group">
+            <label for="tipo">Stock de salida:</label>
+            <input type="text" class="form-control" id="StockS" name="StockS" placeholder="Ingresa la cantidad de stock">
+        </div>
+
+        <div class="form-group">
+            <label for="Tipo">Usuario:</label>
+            <select class="form-control" id="Idusuario" name="Idusuario">
+                <option value="">Selecciona un usuario</option>
+                @foreach (var usuario in ViewBag.Usuarios)
+                {
+                    <option value="@usuario.Id">@usuario.Username</option>
+                }
+            </select>
+        </div>
+
+        <button id="AgregarSalida" type="submit" class="btn btn-primary">Agregar Salida</button>
+        <a class="btn btn-secondary" asp-area="" asp-controller="SalidaProducto" asp-action="Salida">Regresar</a>
+    </form>
+</div>
